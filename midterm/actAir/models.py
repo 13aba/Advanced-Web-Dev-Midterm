@@ -27,9 +27,4 @@ class Measurement(models.Model):
         return self.DateTime.strftime("%d/%m/y %H")
 
 
-#/air-quality/ Air quality - show every measurement will also accept data from user
-#/location/ Location - show location informations
-#/air-quality/{location}/ - show only that locations latest air measurements
-#/air-quality/history/{location}?start_date={start}&end_date={end} - show locations air quality history depending on given date
-#/air-quality/average/average?start_date={start}&end_date={end}  - show average air quality across all of the location
-#/air-quality/element/{element}?start_date={start}&end_date={end} - show speficic elements history
+

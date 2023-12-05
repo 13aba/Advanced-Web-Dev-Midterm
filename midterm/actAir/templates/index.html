@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- Head section for information thats not visible !-->
+<head>
+    <meta charset="UTF-8">
+    <!-- Informs device to set viewport to its own width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Author of the web page !-->
+    <meta name="author" content="Bayarbat" />
+    <!-- Description of the web page !-->
+    <meta name="description" content="Air quality database!">
+    <base href="/">
+    <!-- Inform user of current page within site structure: shown on web page's tab -->
+    <title>Air quality | ACT</title>
+
+</head>
+
+<div class="main-title"> 
+    <h1 style="font-size: 3rem">
+        Air quality in ACT community
+    </h1>
+</div>
+
+<body>
+    <h2 style="text-align: center;">API links</h2>
+    <!-- Divider line-->
+    <hr>
+    <!-- API Links-->
+    <ul>
+        <!-- Air quality -->
+        <li>
+            <p>POST 127.0.0.1:8000/air-quality/ - show every measurement will also accept data from user at the bottom </p>
+            <a href="/air-quality/">127.0.0.1:8000/air-quality/</a>
+        </li>
+         <!-- Location  -->
+        <li>
+            <p>GET 127.0.0.1:8000/location/{id} - show location informations like id, name, and gps</p>
+            <a href="/location/">127.0.0.1:8000/location/</a>
+        </li>
+        <!-- Air quality in given location  -->
+        <li>
+            <p>GET 127.0.0.1:8000/air-quality/{location} - Show only given locations latest air measurements</p>
+            <a href="/air-quality/1">127.0.0.1:8000/air-quality/1</a>
+        </li>
+        <!-- Air quality history  -->
+        <li>
+            <p>GET 127.0.0.1:8000/air-quality/history/{location}?date={date} - show locations air quality history depending on given date. Limited to only last 5 year
+            . Date is written in YYYYMMDD format
+            </p>
+            <a href="/air-quality/history/2?date=20220526">127.0.0.1:8000/air-quality/history/2?date=20220526</a>
+        </li>
+        <!-- Average air quality between two dates in all area -->
+        <li>
+          <p>GET 127.0.0.1:8000/air-quality/average/average?start_date={start}&end_date={end}  - show average air quality across all of the location.
+            Date is written in YYYYMMDD format
+          </p>
+          <a href="/air-quality/average/average?start_date=20230501&end_date=20230402">127.0.0.1:8000/air-quality/average/average?start_date=20230501&end_date=20230402</a>  
+        </li>
+        <!-- Measurement history of given element  -->
+        <li>
+            <p>GET 127.0.0.1:8000/air-quality/element/{element}?start_date={start}&end_date={end} - show speficic elements history. Date is written in YYYYMMDD format.
+            Possible elements are CO2 O3 NO2 PM10 PM2_5
+            </p>
+            <a href="/air-quality/element/CO2?start_date=20230501&end_date=20230402">127.0.0.1:8000/air-quality/element/CO2?start_date=20230501&end_date=20230402</a>
+        </li>
+      </ul>
+</body>
+
+
+</html>
