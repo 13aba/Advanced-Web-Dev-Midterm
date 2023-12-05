@@ -19,7 +19,7 @@ class Measurement(models.Model):
     O3 = models.FloatField(null=False, blank=False)
     PM10 = models.FloatField(null=False, blank=False)
     PM2_5 = models.FloatField(null=False, blank=False)
-    DateTime = models.DateTimeField(null=False, blank=False)
+    DateTime = models.DateField(null=False, blank=False)
     location = models.ForeignKey(Location, on_delete=models.CASCADE)
 
 
