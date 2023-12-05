@@ -14,17 +14,17 @@ class Location(models.Model):
 
 
 class Measurement(models.Model):
-    CO2 = models.IntegerField(null=False, blank=False)
-    NO2 = models.IntegerField(null=False, blank=False)
-    O3 = models.IntegerField(null=False, blank=False)
-    PM10 = models.IntegerField(null=False, blank=False)
-    PM2_5 = models.IntegerField(null=False, blank=False)
+    CO2 = models.FloatField(null=False, blank=False)
+    NO2 = models.FloatField(null=False, blank=False)
+    O3 = models.FloatField(null=False, blank=False)
+    PM10 = models.FloatField(null=False, blank=False)
+    PM2_5 = models.FloatField(null=False, blank=False)
     DateTime = models.DateTimeField(null=False, blank=False)
     location = models.ForeignKey(Location, on_delete=models.CASCADE)
 
 
     def __str__(self):
-        return self.DateTime
+        return self.DateTime.strftime("%d/%m/y %H")
 
 
 #/air-quality/ Air quality - show every measurement will also accept data from user
