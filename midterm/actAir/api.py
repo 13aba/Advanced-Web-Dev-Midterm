@@ -130,7 +130,12 @@ def air_quality_history(request, location_id):
             
             # Query measurements for the given date and location_id
             measurement = Measurement.objects.filter(DateTime=formatted_date, location_id=location_id)
-            
+
+            # Raise error if there is no measurement with given query
+            if measurement:
+                pass
+            else:
+                raise Exception("No measurement with given date and location")
             #If there is one serialize the measurement and display it
             serializer = MeasurementSerializer(measurement, many=True)
             return Response(serializer.data)
