@@ -4,6 +4,9 @@ from django.contrib import admin
 
 #Everything below here are my own code
 
+#username : admin
+#password : london1
+
 from .models import * 
 
 class LocationAdmin(admin.ModelAdmin):

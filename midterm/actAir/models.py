@@ -14,17 +14,20 @@ class Location(models.Model):
 
 
 class Measurement(models.Model):
+    #air measurements
     CO2 = models.FloatField(null=False, blank=False)
     NO2 = models.FloatField(null=False, blank=False)
     O3 = models.FloatField(null=False, blank=False)
     PM10 = models.FloatField(null=False, blank=False)
     PM2_5 = models.FloatField(null=False, blank=False)
+    #date of the measurement
     DateTime = models.DateField(null=False, blank=False)
+    #
     location = models.ForeignKey(Location, on_delete=models.CASCADE)
 
 
     def __str__(self):
-        return self.DateTime.strftime("%d/%m/y %H")
+        return self.DateTime.strftime("%d/%m/%y")
 
 
 

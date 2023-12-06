@@ -9,8 +9,6 @@ import pandas as pd
 
 # Transform the dataset from csv to panda dataframes
 
-
-
 def clean_dataframe(csv_path):
 
     df = pd.read_csv(csv_path)
@@ -38,6 +36,7 @@ def clean_dataframe(csv_path):
 
     # Using pd.factorize() to convert string values to unique integers
     locations = cleaned_df['Name']
+    #Add one to unique integers as database start from 1 while pd.factorize start from 0
     cleaned_df['location'] = pd.factorize(locations)[0] + 1 
      
     return cleaned_df
